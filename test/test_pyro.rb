@@ -2,7 +2,6 @@ require "json"
 require "selenium-webdriver"
 gem "test-unit"
 require "test/unit"
-
 class TestPyro < Test::Unit::TestCase
 
   def setup
