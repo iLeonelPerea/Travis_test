@@ -20,8 +20,7 @@ class TestBetaljz < Test::Unit::TestCase
   
   def test_betaljz
     @driver.get(@base_url + "/")
-    @driver.find_element(:css, "a[title=\"Jornada TV\"]").click
-    @driver.find_element(:xpath, "//span[@id='videos2']/span/span/img").click
+    @driver.find_element(:xpath, "//a[@href='http://beta.ljz.mx/2014/02/13/se-suma-el-cozcyt-a-los-festejos-del-centenario-de-la-toma-de-zacatecas/']").click
   end
   
   def element_present?(how, what)

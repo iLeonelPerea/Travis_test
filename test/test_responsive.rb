@@ -20,7 +20,6 @@ class TestResponsive < Test::Unit::TestCase
   
   def test_responsive
     @driver.get(@base_url + "/")
-    @driver.find_element(:xpath, "//a[@href='http://responsivetequila.mx/#portafolio']").click
     @driver.find_element(:xpath, "(//button[@type='submit'])[2]").click
   end
   
