@@ -1,5 +1,12 @@
+# Sample .travis.yml file:
 language: ruby
-rvm:
-  - "1.9.3"
-# uncomment this line if your project needs to run something other than `rake`:
-# script: bundle exec rspec spec
+
+rvm: # the Ruby versions to be used
+  - 2.1.0
+  - 2.0.0
+  - 1.9.3
+
+before_install:
+  - gem update # optional, update all gems
+  - gem install selenium-webdriver
+  - phantomjs --version # optional, output the phantomjs version

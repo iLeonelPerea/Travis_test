@@ -1,4 +1,11 @@
+require 'rake/testtask'
+
 task :default => [:test]
-task :test do
-	ruby "hamming_test.rb"
+Rake::TestTask.new(:test) do |test|
+  test.libs << 'test'
+
+  # ensure the sample test file is included here
+  test.test_files = FileList['test/test_*.rb']
+
+  test.verbose = true
 end
