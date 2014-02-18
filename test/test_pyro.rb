@@ -3,11 +3,11 @@ require "selenium-webdriver"
 gem "test-unit"
 require "test/unit"
 
-class TestBetaljz < Test::Unit::TestCase
+class TestPyro < Test::Unit::TestCase
 
   def setup
     @driver = Selenium::WebDriver.for :phantomjs
-    @base_url = "http://beta.ljz.mx/"
+    @base_url = "http://www.pyroblast-c.com/"
     @accept_next_alert = true
     @driver.manage.timeouts.implicit_wait = 30
     @verification_errors = []
@@ -18,9 +18,10 @@ class TestBetaljz < Test::Unit::TestCase
     assert_equal [], @verification_errors
   end
   
-  def test_betaljz
+  def test_pyro
     @driver.get(@base_url + "/")
-    @driver.find_element(:link, "Destacadas").click
+    @driver.find_element(:link, "PORTAFOLIO").click
+    @driver.find_element(:xpath, "(//a[contains(text(),'Consultar')])[2]").click
   end
   
   def element_present?(how, what)
