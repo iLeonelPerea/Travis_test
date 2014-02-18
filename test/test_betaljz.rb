@@ -3,7 +3,7 @@ require "selenium-webdriver"
 gem "test-unit"
 require "test/unit"
 
-class TestBetaljz < Test::Unit::TestCase
+class 2Jornada < Test::Unit::TestCase
 
   def setup
     @driver = Selenium::WebDriver.for :phantomjs
@@ -18,9 +18,9 @@ class TestBetaljz < Test::Unit::TestCase
     assert_equal [], @verification_errors
   end
   
-  def test_betaljz
+  def test_2_jornada
     @driver.get(@base_url + "/")
-    @driver.find_element(:link, "Jornada TV").click
+    @driver.find_element(:xpath, "//a[@href='http://beta.ljz.mx/la-jornada-tv/']").click
     @driver.find_element(:xpath, "//span[@id='videos2']/span/span/img").click
   end
   
