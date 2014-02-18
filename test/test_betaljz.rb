@@ -20,7 +20,7 @@ class TestBetaljz < Test::Unit::TestCase
   
   def test_betaljz
     @driver.get(@base_url + "/")
-    @driver.find_element(:xpath, "//a[contains(text(),'Jornada TV')]").click
+    @driver.find_element(:link, "Jornada TV").click
     @driver.find_element(:xpath, "//span[@id='videos2']/span/span/img").click
   end
   
