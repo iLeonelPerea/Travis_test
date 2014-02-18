@@ -5,7 +5,7 @@ require "test/unit"
 class TestValor < Test::Unit::TestCase
 
   def setup
-    @driver = Selenium::WebDriver.for :phantomjsrequire
+    @driver = Selenium::WebDriver.for :phantomjs
     @base_url = "http://www.valorsustentable.mx/"
     @accept_next_alert = true
     @driver.manage.timeouts.implicit_wait = 30
