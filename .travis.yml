@@ -1,0 +1,15 @@
+# Sample .travis.yml file:
+language: ruby
+
+rvm: # the Ruby versions to be used
+  - 2.1.0
+  - 2.0.0
+  - 1.9.3
+
+before_install:
+  - gem update # optional, update all gems
+  - gem install w3c_validators
+  - gem install uglifier
+  - gem install juicer
+  - juicer install yui_compressor
+  - juicer install jslint
