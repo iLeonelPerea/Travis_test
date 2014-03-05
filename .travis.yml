@@ -20,8 +20,6 @@ env:
   global:
   - secure: "EyqVRwC8fYYpOxwHwEH+CiLDbKp+t4ADuQcBQzqfv42X9P977Y8GZxEujhqheM6Lug3aPbYjjFN2OJWLT55MkTNcCtR9D04fKF1HLu+S1+qW3fjJtUVth5/ZDcyE5/8jGk3ocBs10LKn9IEQMnGNRXxa4FjvZ/1RNhR+wwoq9aY="
 
-script: rake travis 
-
 after_sucess:
   - git config credential.helper "store --file=.git/credentials" 
   - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
