@@ -16,4 +16,8 @@ before_install:
   - juicer install yui_compressor
   - juicer install jslint
 
+env:
+  global:
+  - secure: "EyqVRwC8fYYpOxwHwEH+CiLDbKp+t4ADuQcBQzqfv42X9P977Y8GZxEujhqheM6Lug3aPbYjjFN2OJWLT55MkTNcCtR9D04fKF1HLu+S1+qW3fjJtUVth5/ZDcyE5/8jGk3ocBs10LKn9IEQMnGNRXxa4FjvZ/1RNhR+wwoq9aY="
+
 script: rake travis 
