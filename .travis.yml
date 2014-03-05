@@ -6,7 +6,7 @@ rvm: # the Ruby versions to be used
 
 branches:
   only:
-  - master
+  - gh-pages
 
 before_install:
   - gem update # optional, update all gems
@@ -15,3 +15,5 @@ before_install:
   - gem install juicer
   - juicer install yui_compressor
   - juicer install jslint
+
+script: rake travis 
