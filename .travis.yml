@@ -6,6 +6,10 @@ rvm: # the Ruby versions to be used
   - 2.0.0
   - 1.9.3
 
+branches:
+  only:
+  - master
+
 before_install:
   - gem update # optional, update all gems
   - gem install w3c_validators
