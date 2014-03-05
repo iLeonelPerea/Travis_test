@@ -6,7 +6,7 @@ rvm: # the Ruby versions to be used
 
 branches:
   only:
-  - gh-pages
+  - develop
 
 before_install:
   - gem update # optional, update all gems
