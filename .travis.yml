@@ -1,13 +1,17 @@
-# Sample .travis.yml file:
-language: ruby
-
-rvm: # the Ruby versions to be used
-  - 2.1.0
-  - 2.0.0
-  - 1.9.3
-
-before_install:
-  - gem update # optional, update all gems
-  - gem install selenium-webdriver
-  - gem install test-unit
-  - phantomjs --version # optional, output the phantomjs version
+language: php
+php:
+- 5.3
+env:
+  global:
+  - secure: ZUer/tf4AWd1y46o01lHXzVVbi9Gl3jCuwm72FOlLU0qQqbOwUayqj5SPsuqFKdjdy99WAfeQJBScXFYazuE6o8yaXWfhBU056Qaxwnhi6mC00roXLbW9Exq/HMnAVzwymOu6htz4LhTNnSZ/Wf31P7Kx7g5p5vxOqKD073dUKs=
+  - secure: hKr+d94cAu4nyy56tfp0FqgwAhAxwWnXJGni7ps5UNZOAY/fdaXjrZKKxDByoIDxZEThfoGR6XNaEQo3mVKG1TFLieOPwKjyo/88K5SoJjhEQqKMBw3dma/QO5zAOPZQiTDTcImxQLnbsXAPcCxlmijgsQyk3AvsmH5/dNqQrqI=
+before_script:
+- "./tests/setup/before_script.sh"
+- "./tests/setup/apache.sh"
+- "./tests/setup/selenium.sh"
+- "./tests/setup/saucelabs_setup.sh"
+- "./tests/setup/saucelabs_test.sh"
+script: phpunit --verbose -c tests/phpunit.xml
+notifications:
+  email:
+  - iticleonel.len@gmail.com
