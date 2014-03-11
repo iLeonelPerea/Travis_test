@@ -1,12 +1,13 @@
+require "json"
 require "selenium-webdriver"
 gem "test-unit"
 require "test/unit"
 
-class TestValor < Test::Unit::TestCase
+class TestResponsive < Test::Unit::TestCase
 
   def setup
     @driver = Selenium::WebDriver.for :phantomjs
-    @base_url = "http://www.valorsustentable.mx/"
+    @base_url = "http://responsivetequila.mx/"
     @accept_next_alert = true
     @driver.manage.timeouts.implicit_wait = 30
     @verification_errors = []
@@ -17,10 +18,9 @@ class TestValor < Test::Unit::TestCase
     assert_equal [], @verification_errors
   end
   
-  def test_valor
+  def test_responsive
     @driver.get(@base_url + "/")
-    @driver.find_element(:link, "Noticias").click
-    @driver.find_element(:xpath, "//a[contains(@href, 'noticias/218')]").click
+    @driver.find_element(:xpath, "(//button[@type='submit'])[2]").click
   end
   
   def element_present?(how, what)
